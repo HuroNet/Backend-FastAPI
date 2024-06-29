@@ -7,7 +7,7 @@ html = """
         <title>Servidor python</title>
     </head>
     <body>
-        <h2> Hola mi nombre es calo</h2>
+        <h2> Hola mi nombre es calo Paredes</h2>
     </body>
 </html>
 """
