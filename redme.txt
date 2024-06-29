@@ -1,0 +1,3 @@
+
+Instalar dentro del amabiente
+pip install -r requirements.txt

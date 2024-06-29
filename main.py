@@ -1,6 +1,6 @@
 from wsgiref.simple_server import make_server
 
-html="""
+html = """
 <!DOCTYPE HTML>
 <html>
     <head>
@@ -12,12 +12,14 @@ html="""
 </html>
 """
 
-def aplication(env, start_response):
-    headers = [('Content-Type','text/html')]
-    
-    start_response('200 OK', headers)
-    
-    return [bytes(html,'utf-8')]
 
-server = make_server('localhost',3000,aplication)
+def application(env, start_response):
+    headers = [("Content-Type", "text/html")]
+
+    start_response("200 OK", headers)
+
+    return [bytes(html, "utf-8")]
+
+
+server = make_server("localhost", 3000, application)
 server.serve_forever()

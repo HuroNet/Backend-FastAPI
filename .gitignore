@@ -1,0 +1,10 @@
+venv/ 
+.pytest_cache
+.vscode
+.venv
+.pytest_cache/
+__pycache__/
+package-lock.json
+package.json
+arreglo-ejerci.py
+node_modules
