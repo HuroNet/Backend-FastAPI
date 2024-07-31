@@ -1,14 +1,13 @@
 from fastapi import FastAPI
 
-app=FastAPI(title='Proyecto para peliculas',
-            description='en este poryecto seremos capaces de rese;ar pelis',
-            version='1')
+app = FastAPI(title="Proyecto para peliculas", description="peliculas", version="1")
 
 
-@app.get('/')
+@app.get("/")
 async def index():
-    return 'Hola mundo'
+    return "Hola mundo"
 
-@app.get('/about')
+
+@app.get("/about")
 async def about():
-    return 'About'
+    return "About"
