@@ -10,7 +10,7 @@ def application(env, start_response):
     env = Environment(loader=FileSystemLoader("template"))
 
     template = env.get_template("index.html")
-    html = template.render({"title": "Servidor de Python"})
+    html = template.render({"title": "Python project "})
 
     return [bytes(html, "utf-8")]
 
