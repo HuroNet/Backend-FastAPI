@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 
-app = FastAPI(title="project of peliculas", description="peliculas", version="1")
+app = FastAPI(title="project", description="peliculas", version="1")
 
 
 @app.get("/")
