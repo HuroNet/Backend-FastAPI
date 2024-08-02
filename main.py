@@ -5,7 +5,7 @@ app = FastAPI(title="project", description="peliculas", version="1")
 
 @app.get("/")
 async def index():
-    return "Hola mundo"
+    return "Hola mundo, SOY UN DESARROLLADOR"
 
 
 @app.get("/about")
