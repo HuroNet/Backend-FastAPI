@@ -1,17 +1,23 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, Depends
 from database import database as connection
-from database import engine 
-from database import Base
+
+from database import engine, SessionLocal, Base
+from sqlalchemy.orm import Session
+from models import User
+
+from schemas import UserBaseModel
 
 
+app = FastAPI(
+    title="project to rese;ar peliculas", description="peliculas", version="1"
+)
 
-
-app = FastAPI(title="project to rese;ar peliculas",
-               description="peliculas",
-               version="1")
-
-
-
+def get_db():
+    db = SessionLocal()
+    try:
+        yield db
+    finally:
+        db.close()
 
 @app.on_event("startup")
 async def startup():
@@ -20,16 +26,21 @@ async def startup():
     # Crear las tablas en la base de datos
     Base.metadata.create_all(bind=engine)
 
+
 @app.on_event("shutdown")
 async def shutdown():
     # Desconectar de la base de datos
     await connection.disconnect()
-    print('cerrando')
+    print("cerrando")
 
 
-
-
-
+@app.post("/users/")
+def create_user(username: str, password: str, db: Session = Depends(get_db)):
+    db_user = User(username=username, password=password)
+    db.add(db_user)
+    db.commit()
+    db.refresh(db_user)
+    return db_user
 
 @app.get("/")
 async def index():
