@@ -12,12 +12,14 @@ app = FastAPI(
     title="project to rese;ar peliculas", description="peliculas", version="1"
 )
 
+
 def get_db():
     db = SessionLocal()
     try:
         yield db
     finally:
         db.close()
+
 
 @app.on_event("startup")
 async def startup():
@@ -41,6 +43,7 @@ def create_user(username: str, password: str, db: Session = Depends(get_db)):
     db.commit()
     db.refresh(db_user)
     return db_user
+
 
 @app.get("/")
 async def index():

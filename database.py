@@ -5,7 +5,6 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
 
-
 # Crear una instancia de la base de datos
 DATABASE_URL = "postgresql://postgres:1234@localhost:5432/fastapi"
 database = Database(DATABASE_URL)

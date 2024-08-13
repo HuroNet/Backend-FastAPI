@@ -5,9 +5,10 @@ from sqlalchemy.orm import relationship
 import datetime
 import hashlib
 
+
 class User(Base):
-    __tablename__ = 'users'
-    
+    __tablename__ = "users"
+
     username = Column(String(50), primary_key=True, index=True)
     password = Column(String(50))
 
@@ -25,24 +26,25 @@ class User(Base):
 
     def __str__(self):
         return self.username
-    
+
 
 class Movie(Base):
-    __tablename__ = 'movies'
-    
+    __tablename__ = "movies"
+
     id = Column(Integer, primary_key=True, index=True)
-    title = Column(String(255))  
+    title = Column(String(255))
     created_at = Column(DateTime, default=datetime.datetime.now)
 
     def __str__(self):
         return self.title
-    
+
+
 class UserReview(Base):
-    __tablename__='user_reviews'
+    __tablename__ = "user_reviews"
 
     id = Column(Integer, primary_key=True, index=True)
-    user_id = Column(Integer, ForeignKey('users.id'))
-    movie_id = Column(Integer, ForeignKey('movies.id'))
+    user_id = Column(Integer, ForeignKey("users.id"))
+    movie_id = Column(Integer, ForeignKey("movies.id"))
     review = Column(Text)
     score = Column(Integer)
     created_at = Column(DateTime, default=datetime.datetime.now)
@@ -52,4 +54,4 @@ class UserReview(Base):
     movie = relationship("Movie", back_populates="reviews")
 
     def __str__(self):
-        return f'{self.user.username} - #{self.movie.title}'
+        return f"{self.user.username} - #{self.movie.title}"
