@@ -8,10 +8,8 @@ import hashlib
 class User(Base):
     __tablename__ = 'users'
     
-    id = Column(Integer, primary_key=True, index=True)
-    username = Column(String(50), unique=True, index=True)
+    username = Column(String(50), primary_key=True, index=True)
     password = Column(String(50))
-    created_at = Column(DateTime, default=datetime.datetime.now)
 
     # @classmethod
     # def create_password(cls, password):
