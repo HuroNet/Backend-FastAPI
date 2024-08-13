@@ -5,7 +5,7 @@ from database import engine, SessionLocal, Base
 from sqlalchemy.orm import Session
 from models import User
 
-from schemas import UserBaseModel
+# from schemas import UserBaseModel
 
 
 app = FastAPI(
