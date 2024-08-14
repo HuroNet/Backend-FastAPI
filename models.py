@@ -1,8 +1,10 @@
 from sqlalchemy import Column, ForeignKey, Text, Integer, String, DateTime
+
 # from sqlalchemy.sql import func
 from database import Base
 from sqlalchemy.orm import relationship
 import datetime
+
 # import hashlib
 
 
