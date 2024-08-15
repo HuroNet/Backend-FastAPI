@@ -3,6 +3,7 @@ from sqlalchemy import Column, Integer, String, DateTime, Sequence
 # from sqlalchemy.sql import func
 from database import Base
 from sqlalchemy.sql import func
+
 # import datetime
 
 # def del modelo de secuencia
