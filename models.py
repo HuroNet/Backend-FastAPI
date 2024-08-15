@@ -7,7 +7,7 @@ from sqlalchemy.sql import func
 import datetime
 
 # def del modelo de secuencia
-user_id_seq = Sequence('user_id_seq', start=1000)
+user_id_seq = Sequence("user_id_seq", start=1000)
 
 
 class User(Base):
@@ -20,6 +20,3 @@ class User(Base):
 
     def __str__(self):
         return self.username
-
-
-
