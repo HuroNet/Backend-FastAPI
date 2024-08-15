@@ -1,10 +1,9 @@
-from sqlalchemy import Column, ForeignKey, Text, Integer, String, DateTime, Sequence
+from sqlalchemy import Column, Integer, String, DateTime, Sequence
 
 # from sqlalchemy.sql import func
 from database import Base
-from sqlalchemy.orm import relationship
 from sqlalchemy.sql import func
-import datetime
+# import datetime
 
 # def del modelo de secuencia
 user_id_seq = Sequence("user_id_seq", start=1000)
