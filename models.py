@@ -33,8 +33,9 @@ class Movie(Base):
     def __str__(self):
         return self.title
 
+
 class UserReview(Base):
-    
+
     id = Column(Integer, primary_key=True, index=True)
     user_id = Column(Integer, ForeignKey("users.id"))
     movie_id = Column(Integer, ForeignKey("movies.id"))
@@ -46,6 +47,3 @@ class UserReview(Base):
 
     def __str__(self):
         return f"Review by {self.user} for {self.movie}"
-
-
-
