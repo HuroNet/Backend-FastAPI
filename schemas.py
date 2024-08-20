@@ -12,3 +12,5 @@ class MovieBaseModel(BaseModel):
 
 class UserReviewBaseModel(BaseModel):
     review_text: str
+    userid:str
+    movieid:str
