@@ -7,3 +7,6 @@ class UserBaseModel(BaseModel):
 class MovieBaseModel(BaseModel):
     title: str
     
+class UserReviewBaseModel(BaseModel):
+    review_text: str
+    
