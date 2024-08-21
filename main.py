@@ -45,6 +45,12 @@ def create_user(username: str, password: str, db: Session = Depends(get_db)):
     return db_user
 
 
+@app.post("/movie/")
+def create_movie(db: Session = Depends(get_db)):
+    db_movie = 0
+    return db_movie
+
+
 @app.get("/")
 async def index():
     return "Project of backend conectado a la base de datos"
