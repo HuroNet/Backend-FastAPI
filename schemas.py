@@ -9,6 +9,7 @@ class UserBaseModel(BaseModel):
 
 class MovieBaseModel(BaseModel):
     title: str
+    createal: TimeoutError
 
 
 class UserReviewBaseModel(BaseModel):
