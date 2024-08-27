@@ -25,26 +25,26 @@ class User(Base):
         return self.username
 
 
-class Movie(Base):
-    __tablename__ = "movies"
+# class Movie(Base):
+#     __tablename__ = "movies"
 
-    title = Column(String(50))
-    created_at = Column(DateTime, server_default=func.now())
+#     title = Column(String(50))
+#     created_at = Column(DateTime, server_default=func.now())
 
-    def __str__(self):
-        return self.title
+#     def __str__(self):
+#         return self.title
 
 
-class UserReview(Base):
+# class UserReview(Base):
 
-    id = Column(Integer, primary_key=True, index=True)
-    user_id = Column(Integer, ForeignKey("users.id"))
-    movie_id = Column(Integer, ForeignKey("movies.id"))
-    review_text = Column(Text)
-    review_score = Column(Integer)
+#     id = Column(Integer, primary_key=True, index=True)
+#     user_id = Column(Integer, ForeignKey("users.id"))
+#     movie_id = Column(Integer, ForeignKey("movies.id"))
+#     review_text = Column(Text)
+#     review_score = Column(Integer)
 
-    user = relationship("User", back_populates="reviews")
-    movie = relationship("Movie", back_populates="reviews")
+#     user = relationship("User", back_populates="reviews")
+#     movie = relationship("Movie", back_populates="reviews")
 
-    def __str__(self):
-        return f"Review by {self.user} for {self.movie}"
+#     def __str__(self):
+#         return f"Review by {self.user} for {self.movie}"
