@@ -1,6 +1,6 @@
 from sqlalchemy import Column, Integer, String, DateTime
-from sqlalchemy import Sequence, ForeignKey, Text
-from sqlalchemy.orm import relationship
+from sqlalchemy import Sequence
+# from sqlalchemy.orm import relationship
 
 
 # from sqlalchemy.sql import func
