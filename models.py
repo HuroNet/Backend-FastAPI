@@ -1,5 +1,6 @@
 from sqlalchemy import Column, Integer, String, DateTime
 from sqlalchemy import Sequence
+
 # from sqlalchemy.orm import relationship
 
 
